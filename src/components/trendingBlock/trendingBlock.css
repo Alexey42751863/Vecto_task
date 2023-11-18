@@ -1,0 +1,14 @@
+.trending_block{
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.block_title{
+    font-size: 32px;
+    font-weight: 500;
+    font-style: normal;
+    text-align: left;
+    color: #f1f1f1;
+    text-transform: capitalize;
+}

@@ -1,4 +1,3 @@
-
 export const Poster = (props) => {
     const {
         Id: id,
@@ -49,6 +48,10 @@ export const Poster = (props) => {
             </div>
             <div className="buttons">
                 <div className="play_button btn">
+                    <img
+                        src={`/assets/icons/Play_icon.png`}
+                        alt={`${title}'s title_image`}
+                    />
                     play
                 </div>
                 <div className="more_info btn">

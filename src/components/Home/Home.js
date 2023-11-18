@@ -4,7 +4,7 @@ import TrendingBlock from "../trendingBlock";
 
 export const HomePage = () => {
     const [featuredData, setFeaturedData] = useState({})
-    const [trendingData, setTrendingData] = useState({})
+    const [trendingData, setTrendingData] = useState([])
 
 
     useEffect(() => {

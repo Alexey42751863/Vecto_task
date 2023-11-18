@@ -1,80 +1,10 @@
-.poster {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+.trending_card{
+    padding: 0 8px;
+    aspect-ratio: 25/37;
 }
 
-.content {
-    display: flex;
-    flex-direction: column;
-    padding-left: 3px;
-}
-
-.category_name {
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 42px;
-    font-style: normal;
-    color: #858688;
-    margin-bottom: 7px;
-}
-
-.title_image_wrapper {
-    max-height: 84px;
-    margin-bottom: 20px;
-}
-
-.info {
-    display: flex;
-    gap: 25px;
-    margin-bottom: 11px;
-    font-size: 30px;
-    font-weight: normal;
-    line-height: 42px;
-    font-style: normal;
-    color: #f1f1f1;
-}
-
-.description {
-    margin-bottom: 26px;
-    font-size: 32px;
-    font-weight: normal;
-    line-height: 40px;
-    font-style: normal;
-    color: #f1f1f1;
-}
-
-.buttons {
-    display: flex;
-    gap: 18px;
-}
-
-.btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.card_image{
     width: 100%;
-    max-width: 240px;
-    height: 72px;
-    padding: 12px 0;
-    border-radius: 40px;
-    font-size: 32px;
-    font-weight: bold;
-    line-height: 30px;
-    font-style: normal;
-    text-transform: capitalize;
-}
-
-.play_button {
-    gap: 15px;
-    background: #f1f1f1;
-    color: #0c0c0c;
-}
-
-.more_info {
-    background: linear-gradient(159deg,
-        #2727f5 0.00%,
-        #001671 100.00%);
-    color: #f1f1f1;
+    height: 100%;
+    object-fit: cover;
 }

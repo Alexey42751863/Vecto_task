@@ -4,7 +4,6 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 export const TrendingBlock = ({trendingData}) => {
-    console.log(trendingData)
     const settings = {
         arrows: false,
         infinite: true,
@@ -15,14 +14,14 @@ export const TrendingBlock = ({trendingData}) => {
         autoplaySpeed: 5000,
     };
 
-    return <div className="trending_block">
+    return trendingData.length > 0 ? <div className="trending_block">
         <div className="block_title">
             trending now
         </div>
         <Slider {...settings}>
-            {trendingData.map((item) => {
-                return <TrendingCard item={item} key={item.id}/>
+            {trendingData?.map((item) => {
+                return <TrendingCard item={item} key={item.Id}/>
             })}
         </Slider>
-    </div>
+    </div> : ""
 }
