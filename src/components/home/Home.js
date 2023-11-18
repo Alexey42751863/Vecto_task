@@ -2,30 +2,50 @@ import {useEffect, useState} from "react";
 import Poster from "../poster"
 import TrendingBlock from "../trendingBlock";
 
-export const HomePage = () => {
-    const [featuredData, setFeaturedData] = useState({})
-    const [trendingData, setTrendingData] = useState([])
-
+export const HomePage = ({featuredItem, trendingData}) => {
+    const [currentItem, setCurrentItem] = useState({})
+    const [trendingItems, setTrendingItems] = useState([])
+    const [isPlay, setIsPlay] = useState(false)
 
     useEffect(() => {
-        fetch('http://localhost:3000/Featured')
-            .then(response => response.json())
-            .then(data => setFeaturedData(data))
-            .catch(err => console.error("error:", err))
+        setCurrentItem(featuredItem)
+        setTrendingItems(trendingData)
+    }, [featuredItem, trendingData])
 
-        fetch('http://localhost:3000/TrendingNow')
-            .then(response => response.json())
-            .then(data => setTrendingData(data))
-            .catch(err => console.error("error:", err))
-    }, []);
+    useEffect(() => {
+        setIsPlay(false)
+        const timeout = setTimeout(() => setIsPlay(true), 2000)
+        const clickedItems = JSON.parse(sessionStorage.getItem('clickedItems')) || []
+        let state = [...trendingItems]
+        const newState = [
+            ...clickedItems.map(id => {
+                const item = state.find((element) => +element.Id === id);
+                const filteredState = state.filter(el => +el.Id !== id)
+                state = [...filteredState]
+                return item || null
+            }).filter(el => el !== null),
+            ...state
+        ]
+        setTrendingItems(newState)
+
+        return () => {
+            clearTimeout(timeout)
+        }
+    }, [currentItem]);
 
     return <div className="home_page">
-        <img
-            className="background_image"
-            src={`/assets/${featuredData.CoverImage}`}
-            alt={`${featuredData.Title}'s cover_image`}
-        />
-        <Poster {...featuredData}/>
-        <TrendingBlock trendingData={trendingData}/>
+        {isPlay && currentItem?.VideoUrl ?
+            <video autoPlay playsInline className="background_image">
+                <source src={currentItem?.VideoUrl} type="video/mp4"/>
+            </video>
+            :
+            <img
+                className="background_image"
+                src={`/assets/${currentItem.CoverImage}`}
+                alt={`${currentItem.Title}'s cover_image`}
+            />
+        }
+        <Poster {...currentItem} setIsPlay={setIsPlay}/>
+        <TrendingBlock trendingItems={trendingItems} setFeaturedItem={setCurrentItem}/>
     </div>
 }

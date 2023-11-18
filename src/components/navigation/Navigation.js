@@ -8,7 +8,7 @@ export const Navigation = ({isOpen}) => {
             id: 1,
             title: "search",
             src: "/assets/icons/ICON - Search.png",
-            url: "/search"
+            url: "#"
         },
         {
             id: 2,
@@ -20,25 +20,25 @@ export const Navigation = ({isOpen}) => {
             id: 3,
             title: "tv shows",
             src: "/assets/icons/Group 56.png",
-            url: "/tv"
+            url: "#"
         },
         {
             id: 4,
             title: "movies",
             src: "/assets/icons/Group 54.png",
-            url: "/movies"
+            url: "#"
         },
         {
             id: 5,
             title: "genres",
             src: "/assets/icons/Group 53.png",
-            url: "/genres"
+            url: "#"
         },
         {
             id: 6,
             title: "watch later",
             src: "/assets/icons/Group 47.png",
-            url: "/watch_later"
+            url: "#"
         }
     ]
     const navClasses = classNames("navigation", {

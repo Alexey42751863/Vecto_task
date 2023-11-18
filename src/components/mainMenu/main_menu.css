@@ -10,8 +10,6 @@
     background: linear-gradient(90deg,
     #040404 0.00%,
     rgba(4, 4, 4, 0.2) 100.00%);
-    /*width: 157px;*/
-    /*width: 100vw;*/
     transition: all linear .3s;
 }
 
@@ -31,6 +29,9 @@
 }
 
 .opened {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: max-content;
     height: 100%;
     padding: 60px 34px;
@@ -79,7 +80,3 @@
     color: #858688;
     text-transform: capitalize;
 }
-
-
-
-

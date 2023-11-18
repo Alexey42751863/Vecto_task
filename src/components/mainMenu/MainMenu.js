@@ -11,10 +11,12 @@ export const MainMenu = () => {
             if (menuRef && menuRef.current && menuRef.current.contains(e.target) && menuRef.current !== e.target) {
                 setIsHovered(true)
                 menuRef.current.style.width = "100vw"
-                // console.log(menuRef.current)
+                menuRef.current.style.background = 'linear-gradient(90deg, #040404 0.00%, rgba(4, 4, 4, 0.2) 100.00%)';
+
             } else {
                 setIsHovered(false)
                 menuRef.current.style.width = "157px"
+                menuRef.current.style.background = "#040404"
             }
         }
 
@@ -25,48 +27,12 @@ export const MainMenu = () => {
         }
     }, []);
 
-    // console.log(isHovered)
-
     const menuClasses = classNames("main_menu", {
         "open": isHovered
     })
 
     return <div className={menuClasses} ref={menuRef} >
-        {/*{*/}
-        {/*    isHovered ?*/}
-        {/*        <div className="menu_content opened" ref={menuRef}*/}
-        {/*             // style={{display: `${isHovered? "block" : "none"}`}}*/}
-        {/*        >*/}
-        {/*            <div>*/}
-        {/*                <div className="user_content">*/}
-        {/*                    <img*/}
-        {/*                        className="user_avatar"*/}
-        {/*                        src="/assets/user_image.png"*/}
-        {/*                        alt={`user's avatar`}*/}
-        {/*                    />*/}
-        {/*                    <span className="user_name">Daniel</span>*/}
-        {/*                </div>*/}
-        {/*                <Navigation isOpen={isHovered}/>*/}
-        {/*            </div>*/}
-        {/*            <div className="menu_links">*/}
-        {/*                <a href="#">*/}
-        {/*                    language*/}
-        {/*                </a>*/}
-        {/*                <a href="#">*/}
-        {/*                    get help*/}
-        {/*                </a>*/}
-        {/*                <a href="#">*/}
-        {/*                    exit*/}
-        {/*                </a>*/}
-        {/*            </div>*/}
-        {/*        </div>*/}
-        {/*        :*/}
-        {/*        <div className="menu_content closed" ref={menuRef}*/}
-        {/*             // style={{display: `${isHovered? "none" : "block"}`}}*/}
-        {/*        >*/}
-        {/*            <Navigation isOpen={false}/>*/}
-        {/*        </div>*/}
-        {/*}*/}
+
         <div className="menu_content">
             <div className="opened">
                 <div>
@@ -96,30 +62,5 @@ export const MainMenu = () => {
                 <Navigation/>
             </div>
         </div>
-
-        {/*<div className="opened" ref={menuRef}>*/}
-        {/*    <div>*/}
-        {/*        {isHovered && <div className="user_content">*/}
-        {/*            <img*/}
-        {/*                className="user_avatar"*/}
-        {/*                src="/assets/user_image.png"*/}
-        {/*                alt={`user's avatar`}*/}
-        {/*            />*/}
-        {/*            <span className="user_name">Daniel</span>*/}
-        {/*        </div>}*/}
-        {/*        <Navigation isOpen={isHovered}/>*/}
-        {/*    </div>*/}
-        {/*    {isHovered && <div className="menu_links">*/}
-        {/*        <a href="#">*/}
-        {/*            language*/}
-        {/*        </a>*/}
-        {/*        <a href="#">*/}
-        {/*            get help*/}
-        {/*        </a>*/}
-        {/*        <a href="#">*/}
-        {/*            exit*/}
-        {/*        </a>*/}
-        {/*    </div>}*/}
-        {/*</div>*/}
     </div>
 }

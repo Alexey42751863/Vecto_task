@@ -1,16 +1,13 @@
 export const Poster = (props) => {
     const {
-        Id: id,
         Title: title,
-        CoverImage: coverImage,
         TitleImage: titleImage,
-        Date: date,
         ReleaseYear: releaseYear,
         MpaRating: mpaRating,
         Category: category,
         Duration: duration,
-        VideoUrl: videoUrl,
-        Description: description
+        Description: description,
+        setIsPlay
     } = props
 
     const secondsToDuration = (sec) => {
@@ -47,7 +44,7 @@ export const Poster = (props) => {
                 {description}
             </div>
             <div className="buttons">
-                <div className="play_button btn">
+                <div className="play_button btn" onClick={() => setIsPlay(true)}>
                     <img
                         src={`/assets/icons/Play_icon.png`}
                         alt={`${title}'s title_image`}
