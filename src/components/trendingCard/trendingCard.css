@@ -1,6 +1,7 @@
 .trending_card{
     padding: 0 8px;
     aspect-ratio: 25/37;
+    cursor: pointer;
 }
 
 .card_image{

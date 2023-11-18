@@ -1,8 +1,8 @@
 .poster {
     height: 100%;
     display: flex;
-    align-items: center;
     justify-content: flex-start;
+    padding-top: 174px;
 }
 
 .content {
@@ -37,12 +37,18 @@
 }
 
 .description {
+    max-width: 800px;
     margin-bottom: 26px;
     font-size: 32px;
     font-weight: normal;
     line-height: 40px;
     font-style: normal;
     color: #f1f1f1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 .buttons {
@@ -64,6 +70,11 @@
     line-height: 30px;
     font-style: normal;
     text-transform: capitalize;
+    cursor: pointer;
+}
+
+.btn:hover{
+    opacity: .7;
 }
 
 .play_button {
